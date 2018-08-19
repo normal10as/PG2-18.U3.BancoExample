@@ -3,8 +3,16 @@
     Private _saldo As Double
 
     Public Sub New()
-        Me.Numero = 0
-        _saldo = 0
+        Me.New(0, 0)
+    End Sub
+
+    Public Sub New(Numero As Integer)
+        Me.New(Numero, 0)
+    End Sub
+
+    Public Sub New(Numero As Integer, Saldo As Double)
+        Me.Numero = Numero
+        Depositar(Saldo)
     End Sub
 
     Public Property Numero As Integer
