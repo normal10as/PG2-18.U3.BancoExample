@@ -1,6 +1,6 @@
 ﻿Public Class Cuenta
     Private _numero As Integer
-    Private _saldo As Double
+    Protected _saldo As Double
 
     Public Sub New()
         Me.New(0, 0)
@@ -41,5 +41,9 @@
         Else
             Return False
         End If
+    End Function
+
+    Public Overrides Function ToString() As String
+        Return Numero
     End Function
 End Class
