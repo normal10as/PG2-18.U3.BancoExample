@@ -34,7 +34,7 @@
         _saldo = Saldo + monto
     End Sub
 
-    Public Function Extraer(monto As Double) As Boolean
+    Public Overridable Function Extraer(monto As Double) As Boolean
         If Saldo >= monto Then
             _saldo = Saldo - monto
             Return True
