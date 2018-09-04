@@ -1,4 +1,4 @@
-﻿Public Class Cuenta
+﻿Public MustInherit Class Cuenta
     Private _numero As Integer
     Protected _saldo As Double
 
