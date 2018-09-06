@@ -25,4 +25,8 @@
             Return False
         End If
     End Function
+
+    Public Overrides Function ToString() As String
+        Return "C.C." & Numero
+    End Function
 End Class
