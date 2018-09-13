@@ -5,6 +5,7 @@ Module CuentaTest
         Dim c1 As Cuenta
         c1 = New CuentaCorriente(123, 1000, 500)
         c1.Numero = 2324
+        c1.Cliente = New Cliente("Pepe", "guqrdiola", 325354, Now)
 
         Dim cc As CuentaCorriente
         cc = c1
@@ -15,7 +16,8 @@ Module CuentaTest
 
         c2.Numero = 1234
         Console.WriteLine("N° cuenta: " & c1.Numero)
-        Console.WriteLine("N° cuenta: " & c1.ToString)
+        Console.WriteLine("Cliente: " & c1.Cliente.ToString)
+        Console.WriteLine("N° cuenta: " & c1.Numero)
         Console.WriteLine("Saldo: " & c1.Saldo)
         Console.WriteLine("N° cuenta: " & c2.Numero)
         Console.WriteLine("N° cuenta: " & c2.ToString)
