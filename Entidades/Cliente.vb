@@ -3,12 +3,14 @@
     Private _nombre As String
     Private _documento As UInteger
     Private _fechaNacimiento As Date
+    Private _cuentas As List(Of Cuenta)
 
     Public Sub New()
         Me.Apellido = "Alcoholico"
         Nombre = "Anonimo"
         Documento = 1000
         FechaNacimiento = Date.Now()
+        _cuentas = New List(Of Cuenta)
     End Sub
 
     Public Sub New(Apellido As String, Nombre As String)
@@ -61,4 +63,9 @@
     Public Overrides Function ToString() As String
         Return Apellido & " " & Nombre
     End Function
+
+    Public Sub addCuenta(cuenta As Cuenta)
+        cuenta.Cliente = Me
+        _cuentas.Add(cuenta)
+    End Sub
 End Class

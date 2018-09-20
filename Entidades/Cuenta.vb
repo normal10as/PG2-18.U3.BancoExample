@@ -36,7 +36,7 @@
         Get
             Return _cliente
         End Get
-        Set(value As Cliente)
+        Friend Set(value As Cliente)
             _cliente = value
         End Set
     End Property
