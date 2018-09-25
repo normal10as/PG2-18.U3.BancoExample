@@ -3,8 +3,8 @@
 
     Private _montoSobregiro As Double
 
-    Sub New(Numero As Integer, saldo As Double, montoSobregiro As Double)
-        MyBase.New(Numero, saldo)
+    Sub New(cliente As Cliente, Numero As Integer, saldo As Double, montoSobregiro As Double)
+        MyBase.New(cliente, Numero, saldo)
         Me.MontoSobregiro = montoSobregiro
     End Sub
 

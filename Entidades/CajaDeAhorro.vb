@@ -3,8 +3,8 @@
 
     Private _interesMensual As Single
 
-    Sub New(numero As Integer, saldo As Double, interesMensual As Single)
-        MyBase.New(numero, saldo)
+    Sub New(cliente As Cliente, numero As Integer, saldo As Double, interesMensual As Single)
+        MyBase.New(cliente, numero, saldo)
         Me.InteresMensual = interesMensual
     End Sub
 

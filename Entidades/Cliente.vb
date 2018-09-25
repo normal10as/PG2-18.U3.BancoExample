@@ -64,8 +64,17 @@
         Return Apellido & " " & Nombre
     End Function
 
-    Public Sub addCuenta(cuenta As Cuenta)
-        cuenta.Cliente = Me
+    Friend Sub addCuenta(cuenta As Cuenta)
+        'cuenta.Cliente = Me
         _cuentas.Add(cuenta)
     End Sub
+
+    Friend Sub removeCuenta(cuenta As Cuenta)
+        'cuenta.Cliente = Nothing
+        _cuentas.Remove(cuenta)
+    End Sub
+
+    Public Function getAllCuentas() As List(Of Cuenta)
+        Return _cuentas
+    End Function
 End Class

@@ -3,16 +3,17 @@
 Module CuentaTest
     Sub main()
         Dim c1 As Cuenta
-        c1 = New CuentaCorriente(123, 1000, 500)
+        Dim x As New Cliente("lele", "Pepe")
+        c1 = New CuentaCorriente(x, 123, 1000, 500)
         c1.Numero = 2324
-        c1.Cliente = New Cliente("Pepe", "guqrdiola", 325354, Now)
+        'c1.Cliente = New Cliente("Pepe", "guqrdiola", 325354, Now)
 
         Dim cc As CuentaCorriente
         cc = c1
         'cc.
 
         Dim c2 As Cuenta
-        c2 = New CajaDeAhorro(234, 5000, 2)
+        c2 = New CajaDeAhorro(x, 234, 5000, 2)
 
         c2.Numero = 1234
         Console.WriteLine("N° cuenta: " & c1.Numero)

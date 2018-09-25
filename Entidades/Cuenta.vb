@@ -10,11 +10,14 @@
     'Public Sub New(Numero As Integer)
     '    Me.New(Numero, 0)
     'End Sub
+    Public Sub New(cliente As Cliente, Numero As Integer)
+        Me.New(cliente, Numero, 0)
+    End Sub
 
-    Public Sub New(Numero As Integer, Saldo As Double)
+    Public Sub New(cliente As Cliente, Numero As Integer, Saldo As Double)
         Me.Numero = Numero
         Depositar(Saldo)
-        'Me.Cliente = Cliente
+        Me.Cliente = cliente
     End Sub
 
     Public Property Numero As Integer
@@ -36,7 +39,9 @@
         Get
             Return _cliente
         End Get
-        Friend Set(value As Cliente)
+        'Friend Set(value As Cliente)
+        Set(value As Cliente)
+            value.addCuenta(Me)
             _cliente = value
         End Set
     End Property

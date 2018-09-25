@@ -12,6 +12,10 @@ Module ClienteTest
         c1.FechaNacimiento = #2000-04-20#
         ImprimirValores(c1)
         Dim c2 As New Cliente("De Arco", "Juana")
+        Dim ca As New CajaDeAhorro(c2, 12323, 0, 2)
+        'c1.addCuenta(ca)
+        Console.WriteLine(ca.Cliente)
+        Console.ReadKey()
         ImprimirValores(c2)
     End Sub
 
