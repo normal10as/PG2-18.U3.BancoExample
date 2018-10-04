@@ -19,8 +19,7 @@
 
     Public Overrides Function Extraer(monto As Double) As Boolean
         If Saldo + MontoSobregiro >= monto Then
-            _saldo = Saldo - monto
-            Return True
+            Return ExtraerSiActiva(monto)
         Else
             Return False
         End If

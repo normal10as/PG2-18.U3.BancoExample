@@ -1,9 +1,14 @@
-﻿Public Class Cliente
+﻿Imports Entidades
+
+Public Class Cliente
+    Implements Suspendible
+
     Private _apellido As String
     Private _nombre As String
     Private _documento As UInteger
     Private _fechaNacimiento As Date
     Private _cuentas As List(Of Cuenta)
+    Private _activo As Boolean
 
     Public Sub New()
         Me.Apellido = "Alcoholico"
@@ -11,6 +16,7 @@
         Documento = 1000
         FechaNacimiento = Date.Now()
         _cuentas = New List(Of Cuenta)
+        Activar()
     End Sub
 
     Public Sub New(Apellido As String, Nombre As String)
@@ -66,7 +72,9 @@
 
     Friend Sub addCuenta(cuenta As Cuenta)
         'cuenta.Cliente = Me
-        _cuentas.Add(cuenta)
+        If _activo Then
+            _cuentas.Add(cuenta)
+        End If
     End Sub
 
     Friend Sub removeCuenta(cuenta As Cuenta)
@@ -77,4 +85,18 @@
     Public Function getAllCuentas() As List(Of Cuenta)
         Return _cuentas
     End Function
+
+    Public Sub Suspender() Implements Suspendible.Suspender
+        _activo = False
+    End Sub
+
+    Public Sub Activar() Implements Suspendible.Activar
+        _activo = True
+    End Sub
+
+    Friend ReadOnly Property Activo() As Boolean
+        Get
+            Return _activo
+        End Get
+    End Property
 End Class

@@ -12,10 +12,14 @@ Module ClienteTest
         c1.FechaNacimiento = #2000-04-20#
         ImprimirValores(c1)
         Dim c2 As New Cliente("De Arco", "Juana")
-        Dim ca As New CajaDeAhorro(c2, 12323, 0, 2)
+        c2.Suspender()
+        Dim ca1 As New CajaDeAhorro(c2, 12323, 0, 2)
         'c1.addCuenta(ca)
-        Console.WriteLine(ca.Cliente)
+        Console.WriteLine(ca1.Cliente)
         Console.ReadKey()
+        ImprimirValores(c2)
+        c2.Activar()
+        Dim ca2 As New CajaDeAhorro(c2, 12323, 0, 2)
         ImprimirValores(c2)
     End Sub
 
@@ -24,5 +28,8 @@ Module ClienteTest
         Console.WriteLine("Nombre: " & cliente.Nombre)
         Console.WriteLine("Documento: " & cliente.Documento)
         Console.WriteLine("Fecha Nacimiento: " & cliente.FechaNacimiento)
+        For Each cuenta In cliente.getAllCuentas()
+            Console.WriteLine(cuenta)
+        Next
     End Sub
 End Module
