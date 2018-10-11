@@ -13,7 +13,7 @@ Module CuentaTest
         'cc.
 
         Dim c2 As Cuenta
-        c2 = New CajaDeAhorro(x, 234, 5000, 2)
+        c2 = New CajaDeAhorro(x, 234, 5000)
 
         c2.Numero = 1234
         Console.WriteLine("N° cuenta: " & c1.Numero)

@@ -2,11 +2,15 @@
 
 Module CajaDeAhorroTest
     Sub main()
+        CajaDeAhorro.InteresMensual = 2
         Dim x As New Cliente("lele", "Pepe")
-        Dim c1 As New CajaDeAhorro(x, 123, 0, 2)
+        'Dim c1 As New CajaDeAhorro(x, 123, 0, 2)
+        Dim c1 As New CajaDeAhorro(x, 123, 0)
         'c1.Numero = 2324
-        Dim c2 As New CajaDeAhorro(x, 234, 10000, 5)
+        Dim c2 As New CajaDeAhorro(x, 234, 10000)
+        'Dim c2 As New CajaDeAhorro(x, 234, 10000, 5)
         'c2.Numero = 1234
+        Console.WriteLine("Int. menusal:" & CajaDeAhorro.InteresMensual)
         mostrarTodo(c1)
         mostrarTodo(c2)
 

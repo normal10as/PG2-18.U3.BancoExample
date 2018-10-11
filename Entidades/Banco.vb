@@ -1,13 +1,13 @@
 ﻿Public Class Banco
-    Private _nombre As String
-    Private _clientes As List(Of Cliente)
+    Private Shared _nombre As String
+    Private Shared _clientes As List(Of Cliente)
 
-    Sub New()
+    Shared Sub New()
         Nombre = ""
         _clientes = New List(Of Cliente)
     End Sub
 
-    Public Property Nombre As String
+    Public Shared Property Nombre As String
         Get
             Return _nombre
         End Get
@@ -16,7 +16,7 @@
         End Set
     End Property
 
-    Public Sub addCliente(cliente As Cliente)
+    Public Shared Sub addCliente(cliente As Cliente)
         _clientes.Add(cliente)
     End Sub
 

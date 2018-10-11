@@ -13,13 +13,13 @@ Module ClienteTest
         ImprimirValores(c1)
         Dim c2 As New Cliente("De Arco", "Juana")
         c2.Suspender()
-        Dim ca1 As New CajaDeAhorro(c2, 12323, 0, 2)
+        Dim ca1 As New CajaDeAhorro(c2, 12323, 0)
         'c1.addCuenta(ca)
         Console.WriteLine(ca1.Cliente)
         Console.ReadKey()
         ImprimirValores(c2)
         c2.Activar()
-        Dim ca2 As New CajaDeAhorro(c2, 12323, 0, 2)
+        Dim ca2 As New CajaDeAhorro(c2, 12323, 0)
         ImprimirValores(c2)
     End Sub
 
