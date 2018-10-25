@@ -20,11 +20,28 @@
         _clientes.Add(cliente)
     End Sub
 
-    Public Sub removeCliente(cliente As Cliente)
+    Public Shared Sub removeCliente(cliente As Cliente)
         _clientes.Remove(cliente)
     End Sub
 
-    Public Function GetAllClientes() As List(Of Cliente)
+    Public Shared Function GetAllClientes() As List(Of Cliente)
         Return _clientes
+    End Function
+
+    Public Shared Function ContainsCliente(cliente As Cliente) As Boolean
+        Return _clientes.Contains(cliente)
+    End Function
+
+    Public Shared Function ExistsCliente(dni As UInteger) As Boolean
+        Return _clientes.Exists(Function(c) c.Documento = dni)
+    End Function
+
+    Public Shared Function FindCliente(dni As UInteger) As Cliente
+        Return _clientes.Find(Function(c) c.Documento = dni)
+    End Function
+
+    Public Shared Function FindClienteByNombreOrApellido(value As String) As List(Of Cliente)
+        Return _clientes.FindAll(Function(c) c.Apellido.Contains(value) _
+            Or c.Nombre.Contains(value))
     End Function
 End Class
